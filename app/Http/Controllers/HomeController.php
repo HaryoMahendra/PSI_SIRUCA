@@ -53,21 +53,30 @@ class HomeController extends Controller
 
     public function update(Request $request, $id)
     {
-        dd($request->all());
-        // $validator = Validator::make($request->all(), [
-        //     'nama' => 'required',
-        //     'email' => 'required|email',
-        //     'password' => 'required',
-        // ]);
+        $validator = Validator::make($request->all(), [
+            'nama' => 'required',
+            'email' => 'required|email',
+            'password' => 'nullable',
+        ]);
 
-        // if ($validator->fails()) return redirect()->back()->withInput()->withErrors($validator); 
+        if ($validator->fails()) return redirect()->back()->withInput()->withErrors($validator); 
         
-        // $data['name'] = $request->nama;
-        // $data['email'] = $request->email;
-        // $data['password'] = Hash::make($request->password);
+        $data['name'] = $request->nama;
+        $data['email'] = $request->email;
 
-        // User::where('id', $id)->update($data);
+        if ($request->password){
+            $data['password'] = Hash::make($request->password);
+        }
+        
 
-        // return redirect()->route('index');
+        User::whereId($id)->update($data);
+
+        return redirect()->route('index');
+    }
+
+    public function delete($id)
+    {
+        User::whereId($id)->delete();
+        return redirect()->route('index');
     }
 }

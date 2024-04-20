@@ -20,8 +20,9 @@
         <!-- /.content-header -->
         <section class="content">
             <div class="container-fluid">
-                <form action="{{ route('user.store') }}" method="POST">
+                <form action="{{ route('user.update',['id' => $data->id]) }}" method="POST">
                     @csrf
+                    @method('PUT')
                     <div class="row">
                         <!-- left column -->
                         <div class="col-md-6">
