@@ -60,10 +60,8 @@
                                                 <td>{{ $d->name }}</td>
                                                 <td>{{ $d->email }}</td>
                                                 <td>
-                                                    <a href="" class="btn btn-primary"><i
-                                                            class="fas fa-pen"></i>Edit</a>
-                                                    <a href="" class="btn btn-danger"><i
-                                                            class="fas fa-trash"></i>Delete</a>
+                                                    <a href="{{ route('user.edit',['id' => $d->id]) }}" class="btn btn-primary"><i class="fas fa-pen"></i>Edit</a>
+                                                    <a href="" class="btn btn-danger"><i class="fas fa-trash"></i>Delete</a>
                                             </tr>
                                         @endforeach
                                     </tbody>
