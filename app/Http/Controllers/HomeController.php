@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Validator; 
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -18,4 +19,21 @@ class HomeController extends Controller
         
         return view('index', compact('data'));
     }
-}
+
+    public function create()
+    {
+        return view('create');
+    }
+
+    public function store(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        if ($validator->fails()) { return redirect()->back()->withInput()->withErrors($validator); 
+        }
+        }
+    }
