@@ -50,6 +50,7 @@
                                                 <small>{{ $message }}</small>
                                             @enderror
                                         </div>
+
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Email</label>
                                             <input type="email" class="form-control" id="exampleInputEmail1"
@@ -58,6 +59,17 @@
                                                 <small>{{ $message }}</small>
                                             @enderror
                                         </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Username</label>
+                                            <input type="text" name="username" class="form-control"
+                                                id="exampleInputEmail1" value="{{ $data->username }}"
+                                                placeholder="Enter Username">
+                                            @error('username')
+                                                <small>{{ $message }}</small>
+                                            @enderror
+                                        </div>
+
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Nama</label>
                                             <input type="text" name="nama" class="form-control"
@@ -67,6 +79,7 @@
                                                 <small>{{ $message }}</small>
                                             @enderror
                                         </div>
+
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Password</label>
                                             <input type="password" name="password" class="form-control"

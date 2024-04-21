@@ -6,7 +6,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Data User</h1>
+                        <h1 class="m-0"><b>Halaman Data User</b></h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -27,7 +27,7 @@
                         <a href="{{ route('admin.user.create') }}" class="btn btn-primary mb-3">Add Data </a>
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Responsive Hover Table</h3>
+                                <h3 class="card-title">Data User</h3>
 
                                 <div class="card-tools">
                                     <form action="{{ route('admin.index') }}" method="GET">
@@ -52,7 +52,7 @@
                                             <th>No</th>
                                             <th>Photo</th>
                                             <th>Nama</th>
-                                            <th>Email</th>
+                                            <th>Username</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -63,12 +63,14 @@
                                                 <td><img src="{{ asset('storage/photo-user/' . $d->image) }}"
                                                         alt=""width="50"></td>
                                                 <td>{{ $d->name }}</td>
-                                                <td>{{ $d->email }}</td>
+                                                <td>{{ $d->username }}</td>
                                                 <td>
+                                                    <a href="{{ route('admin.user.show', ['id' => $d->id]) }}"
+                                                        class="btn btn-primary"><i class="fas fa-eye"></i></a>
                                                     <a href="{{ route('admin.user.edit', ['id' => $d->id]) }}"
-                                                        class="btn btn-primary"><i class="fas fa-pen"></i>Edit</a>
+                                                        class="btn btn-warning"><i class="fas fa-pen"></i></a>
                                                     <a data-toggle="modal" data-target="#modal-delete{{ $d->id }}"
-                                                        class="btn btn-danger"><i class="fas fa-trash"></i>Delete</a>
+                                                        class="btn btn-danger"><i class="fas fa-trash"></i></a>
                                                 </td>
                                             </tr>
                                             <div class="modal fade" id="modal-delete{{ $d->id }}">
@@ -93,7 +95,7 @@
                                                                 @csrf
                                                                 @method('DELETE')
                                                                 <button type="button" class="btn btn-default"
-                                                                    data-dismiss="modal">Close</button>
+                                                                    data-dismiss="modal">Cancel</button>
                                                                 <button type="submit" class="btn btn-primary">Iya, hapus
                                                                     data</button>
                                                             </form>
@@ -109,14 +111,14 @@
                                 </table>
                             </div>
                             <!-- /.card-body -->
-                            </div>
                         </div>
-                        <!-- /.card -->
                     </div>
+                    <!-- /.card -->
                 </div>
-                <!-- /.row (main row) -->
-            </div><!-- /.container-fluid -->
-        </section>
-        <!-- /.content -->
+            </div>
+            <!-- /.row (main row) -->
+    </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
     </div>
 @endsection

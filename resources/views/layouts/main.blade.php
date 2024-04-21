@@ -145,32 +145,6 @@
                     </div>
                 </li>
                 <!-- Notifications Dropdown Menu -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
-                        <i class="far fa-bell"></i>
-                        <span class="badge badge-warning navbar-badge">15</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <span class="dropdown-item dropdown-header">15 Notifications</span>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-envelope mr-2"></i> 4 new messages
-                            <span class="float-right text-muted text-sm">3 mins</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-users mr-2"></i> 8 friend requests
-                            <span class="float-right text-muted text-sm">12 hours</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-file mr-2"></i> 3 new reports
-                            <span class="float-right text-muted text-sm">2 days</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-                    </div>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                         <i class="fas fa-expand-arrows-alt"></i>
@@ -193,7 +167,7 @@
                 <img src="{{ asset('picture/logo2.png') }}" alt="SIRUCA Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-bold" style="font-family: Arial;">SIRUCA</span>
-            </a>                      
+            </a>
 
             <!-- Sidebar -->
             <div class="sidebar">
@@ -204,7 +178,7 @@
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
+                        <a href="#" class="d-block">{{ Auth::user()->name }}</a>
                     </div>
                 </div>
 
@@ -236,9 +210,18 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('admin.index') }}" class="nav-link">
-                                <i class="nav-icon fas fa-user"></i> 
+                                <i class="nav-icon fas fa-user"></i>
                                 <p>
                                     Data Users
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>
+                                    Data Buku
                                 </p>
                             </a>
                         </li>
@@ -254,15 +237,6 @@
 
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-book"></i> 
-                                <p>
-                                    Data Buku
-                                </p>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-book-reader"></i>
                                 <p>
                                     Data Peminjaman
@@ -272,7 +246,7 @@
 
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-undo"></i> 
+                                <i class="nav-icon fas fa-undo"></i>
                                 <p>
                                     Data Pengembalian
                                 </p>
@@ -294,20 +268,21 @@
             </div>
             <!-- /.sidebar -->
         </aside>
+    </div>
 
-        <!-- Content Wrapper. Contains page content -->
-        @yield('content')
-        <!-- /.content-wrapper -->
-        <footer class="main-footer" style="text-align: center;">
-            <strong>Copyright &copy; 2024 <a href="https://siruca.co.id">SIRUCA</a>.</strong>
-            All rights reserved.
-        </footer>        
+    <!-- Content Wrapper. Contains page content -->
+    @yield('content')
+    <!-- /.content-wrapper -->
+    <footer class="main-footer" style="text-align: center;">
+        <strong>Copyright &copy; 2024 <a href="https://siruca.co.id">SIRUCA</a>.</strong>
+        All rights reserved.
+    </footer>
 
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
 

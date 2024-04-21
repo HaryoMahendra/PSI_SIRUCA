@@ -30,12 +30,12 @@ class HomeController extends Controller
 
         $data = $data->get();
 
-        return view('index', compact('data', 'request'));
+        return view('users.index', compact('data', 'request'));
     }
 
     public function create()
     {
-        return view('create');
+        return view('users.create');
     }
 
     public function store(Request $request)
@@ -44,6 +44,7 @@ class HomeController extends Controller
             'photo' => 'required|mimes:png,jpg,jpeg|max:2048',
             'nama' => 'required',
             'email' => 'required|email',
+            'username' => 'required',
             'password' => 'required',
         ]);
 
@@ -58,6 +59,7 @@ class HomeController extends Controller
 
         $data['email']      = $request->email;
         $data['name']       = $request->nama;
+        $data['username']   = $request->username;
         $data['password']   = Hash::make($request->password);
         $data['image']      = $filename;
 
@@ -66,10 +68,16 @@ class HomeController extends Controller
         return redirect()->route('admin.index');
     }
 
+    public function show(Request $request, $id)
+    {
+        $data = User::find($id);
+        return view('users.show', compact('data'));
+    }
+
     public function edit(Request $request, $id)
     {
         $data = User::find($id);
-        return view('edit', compact('data'));
+        return view('users.edit', compact('data'));
     }
 
     public function update(Request $request, $id)
@@ -77,6 +85,7 @@ class HomeController extends Controller
         $validator = Validator::make($request->all(), [
             'email'     => 'required|email',
             'nama'      => 'required',
+            'username'  => 'required',
             'password'  => 'nullable',
             'photo'     => 'nullable|mimes:png,jpg,jpeg|max:2048',
         ]);
@@ -85,7 +94,7 @@ class HomeController extends Controller
 
         $find = User::find($id);
 
-        $data['email']      = $request->email;
+        $data['username']      = $request->username;
         $data['name']       = $request->nama;
 
         if ($request->password) {
