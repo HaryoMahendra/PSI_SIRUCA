@@ -27,7 +27,7 @@
             <div class="card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
 
-                <form action="{{ route('login-proses') }}" method="post">
+                <form action="{{ route('login') }}" method="post">
                     @csrf
                     <div class="input-group mb-3">
                         <input type="text" name="username" class="form-control" placeholder="Username">
@@ -37,10 +37,10 @@
                             </div>
                         </div>
                     </div>
-                    @error('email')
+                    @error('username')
                         <small class="text-danger">{{ $message }}</small>
                     @enderror
-                    
+
                     <div class="input-group mb-3">
                         <input type="password" name="password" class="form-control" placeholder="Password">
                         <div class="input-group-append">
@@ -52,7 +52,7 @@
                     @error('password')
                         <small class="text-danger">{{ $message }}</small>
                     @enderror
-                    
+
                     <div class="row">
                         <!-- /.col -->
                         <div class="col-4">
