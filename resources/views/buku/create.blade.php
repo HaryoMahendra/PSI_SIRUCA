@@ -6,12 +6,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">User</h1>
+                        <h1 class="m-0">Buku</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Tambah User</li>
+                            <li class="breadcrumb-item active">Tambah buku</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -20,7 +20,7 @@
         <!-- /.content-header -->
         <section class="content">
             <div class="container-fluid">
-                <form action="{{ route('admin.user.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('buku.buku.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <!-- left column -->
@@ -28,52 +28,45 @@
                             <!-- general form elements -->
                             <div class="card card-primary">
                                 <div class="card-header">
-                                    <h3 class="card-title">Form Tambah Data User</h3>
+                                    <h3 class="card-title">Form Tambah Data Buku</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
                                 <form>
                                     <div class="card-body">
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Photo Profile</label>
+                                        {{-- <div class="form-group">
+                                            <label for="exampleInputEmail1">Sampul Buku</label>
                                             <input type="file" class="form-control" id="exampleInputEmail1"
                                                 name="photo">
                                             @error('photo')
                                                 <small>{{ $message }}</small>
                                             @enderror
-                                        </div>
+                                        </div> --}}
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Nama</label>
+                                            <label for="exampleInputEmail1">Judul Buku</label>
                                             <input type="text" class="form-control" id="exampleInputEmail1"
-                                                name="nama" placeholder="Masukkan Nama">
-                                            @error('nama')
+                                                name="judul" placeholder="Masukkan Judul Buku">
+                                            @error('judul')
                                                 <small>{{ $message }}</small>
                                             @enderror
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Username</label>
-                                            <input type="username" name="username" class="form-control"
-                                                id="exampleInputusername1"placeholder="Masukkan Email">
-                                            @error('username')
+                                            <label for="exampleInputEmail1">Tahun Terbit</label>
+                                            <input type="text" class="form-control" id="exampleInputEmail1"
+                                                name="tahun_terbit" placeholder="Masukkan Tahun Terbit">
+                                            @error('tahun_terbit')
                                                 <small>{{ $message }}</small>
                                             @enderror
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Email</label>
-                                            <input type="email" name="email" class="form-control"
-                                                id="exampleInputEmail1" placeholder="Masukkan Email">
-                                            @error('email')
+                                            <label for="exampleInputEmail1">Penerbit</label>
+                                            <input type="text" class="form-control" id="exampleInputEmail1"
+                                                name="penerbit" placeholder="Masukkan Penerbit">
+                                            @error('penerbit')
                                                 <small>{{ $message }}</small>
                                             @enderror
                                         </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Password</label>
-                                            <input type="password" name="password" class="form-control"
-                                                id="exampleInputPassword1" placeholder="Masukkan Password">
-                                            @error('password')
-                                                <small>{{ $message }}</small>
-                                            @enderror
-                                        </div>
+
                                     </div>
                                     <!-- /.card-body -->
                                     <div class="card-footer">

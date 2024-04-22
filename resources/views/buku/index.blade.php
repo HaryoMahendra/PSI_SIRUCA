@@ -24,13 +24,13 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                        <a href="{{ route('admin.user.create') }}" class="btn btn-primary mb-3">Add Data </a>
+                        <a href="{{ route('buku.buku.create') }}" class="btn btn-primary mb-3">Add Data </a>
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Data User</h3>
+                                <h3 class="card-title">Data Buku</h3>
 
                                 <div class="card-tools">
-                                    <form action="{{ route('admin.index') }}" method="GET">
+                                    <form action="{{ route('buku.index') }}" method="GET">
                                         <div class="input-group input-group-sm" style="width: 150px;">
                                             <input type="text" name="search" class="form-control float-right"
                                                 placeholder="Search" value="{{ $request->get('search') }}">
@@ -50,9 +50,13 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Photo</th>
-                                            <th>Nama</th>
-                                            <th>Username</th>
+                                            <th>Kode Buku</th>
+                                            <th>Sampul Buku</th>
+                                            <th>Judul Buku</th>
+                                            <th>Kategori Buku</th>
+                                            <th>Penerbit</th>
+                                            <th>Tahun Terbit</th>
+                                            <th>Penulis</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -60,14 +64,20 @@
                                         @foreach ($data as $d)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td><img src="{{ asset('storage/photo-user/' . $d->image) }}"
-                                                        alt=""width="50"></td>
-                                                <td>{{ $d->name }}</td>
-                                                <td>{{ $d->username }}</td>
+                                                {{-- <td><img src="{{ asset('storage/photo-user/' . $d->image) }}"
+                                                        alt=""width="50"></td> --}}
+                                                <td>{{ $d->kode_buku }}</td>
+                                                <td><img src="/storage/sampul_buku/{{ $d->sampul }}" alt=""
+                                                        width="50"></td>
+                                                <td>{{ $d->judul }}</td>
+                                                <td>{{ $d->kategori_buku }}</td>
+                                                <td>{{ $d->penerbit }}</td>
+                                                <td>{{ $d->tahun_terbit }}</td>
+                                                <td>{{ $d->penulis }}</td>
                                                 <td>
-                                                    <a href="{{ route('admin.user.show', ['id' => $d->id]) }}"
+                                                    <a href="{{ route('buku.buku.show', ['id' => $d->id]) }}"
                                                         class="btn btn-primary"><i class="fas fa-eye"></i></a>
-                                                    <a href="{{ route('admin.user.edit', ['id' => $d->id]) }}"
+                                                    <a href="{{ route('buku.buku.edit', ['id' => $d->id]) }}"
                                                         class="btn btn-warning"><i class="fas fa-pen"></i></a>
                                                     <a data-toggle="modal" data-target="#modal-delete{{ $d->id }}"
                                                         class="btn btn-danger"><i class="fas fa-trash"></i></a>
@@ -84,13 +94,13 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <p>Apakah yakin ingin menghapus data user
+                                                            <p>Apakah yakin ingin menghapus data buku
                                                                 <b>{{ $d->name }}</b>
                                                             </p>
                                                         </div>
                                                         <div class="modal-footer justify-content-between">
                                                             <form
-                                                                action="{{ route('admin.user.delete', ['id' => $d->id]) }}"
+                                                                action="{{ route('buku.buku.delete', ['id' => $d->id]) }}"
                                                                 method="POST">
                                                                 @csrf
                                                                 @method('DELETE')

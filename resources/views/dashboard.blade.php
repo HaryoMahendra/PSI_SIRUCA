@@ -28,7 +28,7 @@
                         <div class="info-box">
                             <span class="info-box-icon bg-info elevation-1"><i class="fas fa-book"></i></span>
                             <div class="info-box-content">
-                                <a href="{{ route('admin.index') }}" class="info-box-text">Katalog</a>
+                                <a href="#" class="info-box-text">Katalog</a>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -39,7 +39,7 @@
                         <div class="info-box mb-3">
                             <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-handshake"></i></span>
                             <div class="info-box-content">
-                                <span class="info-box-text">Peminjaman</span>
+                                <a href="#" class="info-box-text">Peminjaman</a>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -51,7 +51,7 @@
                         <div class="info-box mb-3">
                             <span class="info-box-icon bg-success elevation-1"><i class="fas fa-undo"></i></span>
                             <div class="info-box-content">
-                                <span class="info-box-text">Pengembalian</span>
+                                <a href="#" class="info-box-text">Pengembalian</a>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -62,7 +62,7 @@
                         <div class="info-box mb-3">
                             <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
                             <div class="info-box-content">
-                                <span class="info-box-text">Pengunjung</span>
+                                <a href="#" class="info-box-text">Pengunjung</a>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
