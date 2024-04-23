@@ -16,7 +16,7 @@
                  {{-- <img src="{{ Auth::user()->picture }}" class="img-circle elevation-2" alt="User Image"> --}}
              </div>
              <div class="info">
-                 <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+                <a href="{{ route('admin.user.show', ['id' => Auth::user()->id]) }}" class="d-block">{{ Auth::user()->name }}</a>
              </div>
          </div>
 
@@ -56,7 +56,7 @@
                  </li>
 
                  <li class="nav-item">
-                     <a href="{{ route('index') }}" class="nav-link">
+                     <a href="{{ route('buku.index') }}" class="nav-link">
                          <i class="nav-icon fas fa-book"></i>
                          <p>
                              Data Buku
@@ -64,23 +64,6 @@
                      </a>
                  </li>
 
-                 <li class="nav-item">
-                     <a href="#" class="nav-link">
-                         <i class="nav-icon fas fa-book-reader"></i>
-                         <p>
-                             Data Peminjaman
-                         </p>
-                     </a>
-                 </li>
-
-                 <li class="nav-item">
-                     <a href="#" class="nav-link">
-                         <i class="nav-icon fas fa-undo"></i>
-                         <p>
-                             Data Pengembalian
-                         </p>
-                     </a>
-                 </li>
 
                  <li class="nav-item">
                      <form action="{{ route('logout') }}" method="post" class="nav-link">

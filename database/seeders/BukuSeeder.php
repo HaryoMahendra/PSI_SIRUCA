@@ -16,31 +16,14 @@ class BukuSeeder extends Seeder
         $buku = [
             [
                 'kode_buku' => 'B001',
-                'sampul' => 'buku1.jpg',
-                'judul' => 'Belajar Pemrograman Java',
+                // 'sampul' => 'buku1.jpg',
+                'judul' => 'Belajar PHP',
                 'kategori_buku' => 'Pemrograman',
                 'penerbit' => 'Informatika',
-                'tahun_terbit' => 2021,
+                'tahun_terbit' => '2021',
                 'penulis' => 'Joko',
             ],
-            [
-                'kode_buku' => 'B002',
-                'sampul' => 'buku2.jpg',
-                'judul' => 'Belajar Pemrograman PHP',
-                'kategori_buku' => 'Pemrograman',
-                'penerbit' => 'Informatika',
-                'tahun_terbit' => 2021,
-                'penulis' => 'Joko',
-            ],
-            [
-                'kode_buku' => 'B003',
-                'sampul' => 'buku3.jpg',
-                'judul' => 'Belajar Pemrograman Python',
-                'kategori_buku' => 'Pemrograman',
-                'penerbit' => 'Informatika',
-                'tahun_terbit' => 2021,
-                'penulis' => 'Joko',
-            ],
+
         ];
 
         // Insert data buku ke dalam tabel buku

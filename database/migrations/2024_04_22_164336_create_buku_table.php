@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('buku', function (Blueprint $table) {
             $table->id('buku_id');
             $table->string('kode_buku')->unique(); // Kolom kode buku dengan constraint unique
-            $table->string('sampul');
             $table->string('judul');
             $table->string('kategori_buku'); // Kolom kategori buku
             $table->string('penerbit'); // Kolom penerbit

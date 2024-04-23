@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Buku;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator; 
 use Illuminate\Http\Request;
@@ -63,7 +64,7 @@ class HomeController extends Controller
         $data['password']   = Hash::make($request->password);
         $data['image']      = $filename;
 
-        User::create($data);
+        Buku::create($data);
 
         return redirect()->route('admin.index');
     }
@@ -94,7 +95,7 @@ class HomeController extends Controller
 
         $find = User::find($id);
 
-        $data['username']      = $request->username;
+        $data['username']   = $request->username;
         $data['name']       = $request->nama;
 
         if ($request->password) {

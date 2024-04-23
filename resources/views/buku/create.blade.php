@@ -34,44 +34,69 @@
                                 <!-- form start -->
                                 <form>
                                     <div class="card-body">
-                                        {{-- <div class="form-group">
-                                            <label for="exampleInputEmail1">Sampul Buku</label>
-                                            <input type="file" class="form-control" id="exampleInputEmail1"
-                                                name="photo">
-                                            @error('photo')
-                                                <small>{{ $message }}</small>
-                                            @enderror
-                                        </div> --}}
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Judul Buku</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1"
-                                                name="judul" placeholder="Masukkan Judul Buku">
-                                            @error('judul')
-                                                <small>{{ $message }}</small>
-                                            @enderror
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Tahun Terbit</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1"
-                                                name="tahun_terbit" placeholder="Masukkan Tahun Terbit">
-                                            @error('tahun_terbit')
-                                                <small>{{ $message }}</small>
-                                            @enderror
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Penerbit</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1"
-                                                name="penerbit" placeholder="Masukkan Penerbit">
-                                            @error('penerbit')
-                                                <small>{{ $message }}</small>
-                                            @enderror
+                                        <div class="card-body">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Kode Buku</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                                    name="kode_buku" placeholder="Masukkan Kode Buku">
+                                                @error('kode_buku')
+                                                    <small>{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Sampul Buku</label>
+                                                <input type="file" class="form-control" id="exampleInputEmail1"
+                                                    name="sampul">
+                                                @error('sampul')
+                                                    <small>{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Judul Buku</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                                    name="judul" placeholder="Masukkan Judul Buku">
+                                                @error('judul')
+                                                    <small>{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Kategori Buku</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                                    name="kategori_buku" placeholder="Masukkan Kategori Buku">
+                                                @error('kategori_buku')
+                                                    <small>{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Penerbit</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                                    name="penerbit" placeholder="Masukkan Penerbit">
+                                                @error('penerbit')
+                                                    <small>{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Penulis</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                                    name="penulis" placeholder="Masukkan penulis">
+                                                @error('penulis')
+                                                    <small>{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Tahun Terbit</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                                    name="tahun_terbit" placeholder="Masukkan Tahun Terbit">
+                                                @error('tahun_terbit')
+                                                    <small>{{ $message }}</small>
+                                                @enderror
+                                            </div>
                                         </div>
 
-                                    </div>
-                                    <!-- /.card-body -->
-                                    <div class="card-footer">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                    </div>
+                                        <!-- /.card-body -->
+                                        <div class="card-footer">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
                                 </form>
                             </div>
                             <!-- /.card -->

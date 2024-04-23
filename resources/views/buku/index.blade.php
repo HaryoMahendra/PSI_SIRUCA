@@ -54,9 +54,9 @@
                                             <th>Sampul Buku</th>
                                             <th>Judul Buku</th>
                                             <th>Kategori Buku</th>
+                                            <th>Penulis</th>
                                             <th>Penerbit</th>
                                             <th>Tahun Terbit</th>
-                                            <th>Penulis</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -64,8 +64,8 @@
                                         @foreach ($data as $d)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                {{-- <td><img src="{{ asset('storage/photo-user/' . $d->image) }}"
-                                                        alt=""width="50"></td> --}}
+                                                <td><img src="{{ asset('storage/sampul-buku/' . $d->sampul) }}"
+                                                        alt=""width="50"></td>
                                                 <td>{{ $d->kode_buku }}</td>
                                                 <td><img src="/storage/sampul_buku/{{ $d->sampul }}" alt=""
                                                         width="50"></td>

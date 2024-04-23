@@ -5,6 +5,7 @@
             <div class="card-header">
                 <div class="card-tools"></div>
             </div>
+            
             <div class="card-body">
                 @empty($data)
                     <div class="alert alert-danger alert-dismissible">
@@ -14,26 +15,40 @@
                 @else
                     <table class="table table-bordered table-striped table-hover table-sm">
                         <tr>
-                            <th>Profil</th>
-                            <td><img src="{{ asset('storage/photo-user/' . $data->image) }}" style="max-width: 100px;"
-                                    alt="Foto">
+                            <th>Kode Buku</th>
+                            <td>{{ $data->kode_buku }}</td>
+                        </tr>
+                        <tr>
+                            <th>Sampul Buku</th>
+                            <td>
+                                <img src="{{ asset('storage/' . $data->sampul) }}" alt="{{ $data->judul }}" class="img-fluid"
+                                    style="width: 150px">
                             </td>
                         </tr>
                         <tr>
-                            <th>Nama Lengkap</th>
-                            <td>: {{ $data->name }}</td>
+                            <th>Judul Buku</th>
+                            <td>{{ $data->judul }}</td>
                         </tr>
                         <tr>
-                            <th>Username</th>
-                            <td>: {{ $data->username }}</td>
+                            <th>Kategori Buku</th>
+                            <td>{{ $data->kategori_buku }}</td>
                         </tr>
                         <tr>
-                            <th>Password</th>
-                            <td>********</td>
+                            <th>Penerbit</th>
+                            <td>{{ $data->penerbit }}</td>
                         </tr>
+                        <tr>
+                            <th>Tahun Terbit</th>
+                            <td>{{ $data->tahun_terbit }}</td>
+                        </tr>
+                        <tr>
+                            <th>Penulis</th>
+                            <td>{{ $data->penulis }}</td>
+                        </tr>
+                        
                     </table>
                 @endempty
-                <a href="{{ route('admin.index') }}" class="btn btn-sm btn-default mt-2">Kembali</a>
+                <a href="{{ route('buku.index') }}" class="btn btn-sm btn-default mt-2">Kembali</a>
             </div>
         </div>
     </div>
