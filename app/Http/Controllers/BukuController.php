@@ -21,7 +21,6 @@ class BukuController extends Controller
         }
         
         $data = $data->get();
-
         return view('buku.index', compact('data', 'request'));
     }
 
@@ -78,6 +77,7 @@ class BukuController extends Controller
             'kode_buku' => 'required',
             'sampul' => 'required|image|mimes:jpeg,png,jpg|max:10000',
             'judul' => 'required',
+            'kategori_buku' => 'required',
             'penulis' => 'required',
             'penerbit' => 'required',
             'tahun_terbit' => 'required',
@@ -94,31 +94,35 @@ class BukuController extends Controller
         $data['kode_buku'] = $request->kode_buku;
         $data['sampul'] = $filename;
         $data['judul'] = $request->judul;
+        $data['kategori_buku'] = $request->kategori_buku;
         $data['penulis'] = $request->penulis;
         $data['penerbit'] = $request->penerbit;
         $data['tahun_terbit'] = $request->tahun_terbit;
 
+        Buku::create($data);
+
+        return redirect()->route('buku.index');
+
     }
 
-    public function show(string $id)
+    public function show(Request $request, $buku_id)
     {
-        $data = Buku::find($id);
+        $data = Buku::where(['buku_id' => $buku_id])->first();
         return view('buku.show', compact('data'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function edit(string $buku_id)
     {
-        //
+        $data = Buku::where(['buku_id' => $buku_id])->first();
+        return view('buku.edit', compact('data'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    public function delete(string $buku_id)
     {
-        //
+        $data = Buku::findOrFail($buku_id);
+        if($data){
+            $data->delete();
+        }
+        return redirect()->route('buku.index');
     }
 }

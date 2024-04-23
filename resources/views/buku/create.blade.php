@@ -20,7 +20,7 @@
         <!-- /.content-header -->
         <section class="content">
             <div class="container-fluid">
-                <form action="{{ route('buku.buku.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('buku.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <!-- left column -->

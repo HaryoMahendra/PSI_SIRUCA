@@ -5,7 +5,7 @@
             <div class="card-header">
                 <div class="card-tools"></div>
             </div>
-            
+
             <div class="card-body">
                 @empty($data)
                     <div class="alert alert-danger alert-dismissible">
@@ -21,8 +21,8 @@
                         <tr>
                             <th>Sampul Buku</th>
                             <td>
-                                <img src="{{ asset('storage/' . $data->sampul) }}" alt="{{ $data->judul }}" class="img-fluid"
-                                    style="width: 150px">
+                                <img src="{{ asset('storage/sampul-buku/' . $data->sampul) }}" alt="{{ $data->judul }}"
+                                    class="img-fluid" style="width: 150px">
                             </td>
                         </tr>
                         <tr>
@@ -45,7 +45,7 @@
                             <th>Penulis</th>
                             <td>{{ $data->penulis }}</td>
                         </tr>
-                        
+
                     </table>
                 @endempty
                 <a href="{{ route('buku.index') }}" class="btn btn-sm btn-default mt-2">Kembali</a>

@@ -54,12 +54,12 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     Route::group(['prefix' => 'buku', 'as' => 'buku.'], function () {
-        Route::get('/buku', [BukuController::class, 'index']) -> name('index');
-        Route::get('/create', [BukuController::class, 'create']) -> name('buku.create');
-        Route::post('/store', [BukuController::class, 'store']) -> name('buku.store');
-        Route::get('/{id}', [BukuController::class, 'show']) -> name('buku.show');
-        Route::get('/edit/{id}', [BukuController::class, 'edit']) -> name('buku.edit');
-        Route::put('/update/{id}', [BukuController::class, 'update']) -> name('buku.update');
-        Route::delete('/delete/{id}', [BukuController::class, 'delete']) -> name('buku.delete');
+        Route::get('/', [BukuController::class, 'index']) -> name('index');
+        Route::get('/create', [BukuController::class, 'create']) -> name('create');
+        Route::post('/store', [BukuController::class, 'store']) -> name('store');
+        Route::get('/{id}', [BukuController::class, 'show']) -> name('show');
+        Route::get('/edit/{id}', [BukuController::class, 'edit']) -> name('edit');
+        Route::put('/update/{id}', [BukuController::class, 'update']) -> name('update');
+        Route::delete('/delete/{id}', [BukuController::class, 'delete']) -> name('delete');
     });
 });

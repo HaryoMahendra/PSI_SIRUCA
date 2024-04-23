@@ -6,7 +6,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">User</h1>
+                        <h1 class="m-0">Buku</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -20,7 +20,7 @@
         <!-- /.content-header -->
         <section class="content">
             <div class="container-fluid">
-                <form action="{{ route('buku.buku.update', ['id' => $data->id]) }}" method="POST"
+                <form action="{{ route('buku.update', ['id' => $data->buku_id]) }}" method="POST"
                     enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
@@ -40,7 +40,8 @@
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Kode Buku</label>
                                                 <input type="text" class="form-control" id="exampleInputEmail1"
-                                                    name="kode_buku" placeholder="Masukkan Kode Buku">
+                                                    name="kode_buku" placeholder="Masukkan Kode Buku"
+                                                    value="{{ $data->kode_buku }}">
                                                 @error('kode_buku')
                                                     <small>{{ $message }}</small>
                                                 @enderror
@@ -56,7 +57,8 @@
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Judul Buku</label>
                                                 <input type="text" class="form-control" id="exampleInputEmail1"
-                                                    name="judul" placeholder="Masukkan Judul Buku">
+                                                    value="{{ $data->judul }}" name="judul"
+                                                    placeholder="Masukkan Judul Buku">
                                                 @error('judul')
                                                     <small>{{ $message }}</small>
                                                 @enderror
@@ -64,7 +66,8 @@
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Kategori Buku</label>
                                                 <input type="text" class="form-control" id="exampleInputEmail1"
-                                                    name="kategori_buku" placeholder="Masukkan Kategori Buku">
+                                                    name="kategori_buku" placeholder="Masukkan Kategori Buku"
+                                                    value="{{ $data->kategori_buku }}">
                                                 @error('kategori_buku')
                                                     <small>{{ $message }}</small>
                                                 @enderror
@@ -72,7 +75,8 @@
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Penerbit</label>
                                                 <input type="text" class="form-control" id="exampleInputEmail1"
-                                                    name="penerbit" placeholder="Masukkan Penerbit">
+                                                    name="penerbit" placeholder="Masukkan Penerbit"
+                                                    value="{{ $data->penerbit }}">
                                                 @error('penerbit')
                                                     <small>{{ $message }}</small>
                                                 @enderror
@@ -80,7 +84,8 @@
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Tahun Terbit</label>
                                                 <input type="text" class="form-control" id="exampleInputEmail1"
-                                                    name="tahun_terbit" placeholder="Masukkan Tahun Terbit">
+                                                    name="tahun_terbit" placeholder="Masukkan Tahun Terbit"
+                                                    value="{{ $data->tahun_terbit }}">
                                                 @error('tahun_terbit')
                                                     <small>{{ $message }}</small>
                                                 @enderror
@@ -88,7 +93,8 @@
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Penulis</label>
                                                 <input type="text" class="form-control" id="exampleInputEmail1"
-                                                    name="penulis" placeholder="Masukkan Penulis">
+                                                    name="penulis" placeholder="Masukkan Penulis"
+                                                    value="{{ $data->penulis }}">
                                                 @error('penulis')
                                                     <small>{{ $message }}</small>
                                                 @enderror

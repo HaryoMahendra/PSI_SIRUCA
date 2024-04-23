@@ -24,7 +24,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                        <a href="{{ route('buku.buku.create') }}" class="btn btn-primary mb-3">Add Data </a>
+                        <a href="{{ route('buku.create') }}" class="btn btn-primary mb-3">Add Data </a>
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">Data Buku</h3>
@@ -64,26 +64,25 @@
                                         @foreach ($data as $d)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
+                                                <td>{{ $d->kode_buku }}</td>
+                                                {{-- <td>{{ $loop->iteration }}</td> --}}
                                                 <td><img src="{{ asset('storage/sampul-buku/' . $d->sampul) }}"
                                                         alt=""width="50"></td>
-                                                <td>{{ $d->kode_buku }}</td>
-                                                <td><img src="/storage/sampul_buku/{{ $d->sampul }}" alt=""
-                                                        width="50"></td>
                                                 <td>{{ $d->judul }}</td>
                                                 <td>{{ $d->kategori_buku }}</td>
                                                 <td>{{ $d->penerbit }}</td>
                                                 <td>{{ $d->tahun_terbit }}</td>
                                                 <td>{{ $d->penulis }}</td>
                                                 <td>
-                                                    <a href="{{ route('buku.buku.show', ['id' => $d->id]) }}"
+                                                    <a href="{{ route('buku.show', ['id' => $d->buku_id]) }}"
                                                         class="btn btn-primary"><i class="fas fa-eye"></i></a>
-                                                    <a href="{{ route('buku.buku.edit', ['id' => $d->id]) }}"
+                                                    <a href="{{ route('buku.edit', ['id' => $d->buku_id]) }}"
                                                         class="btn btn-warning"><i class="fas fa-pen"></i></a>
-                                                    <a data-toggle="modal" data-target="#modal-delete{{ $d->id }}"
+                                                    <a data-toggle="modal" data-target="#modal-delete{{ $d->buku_id }}"
                                                         class="btn btn-danger"><i class="fas fa-trash"></i></a>
                                                 </td>
                                             </tr>
-                                            <div class="modal fade" id="modal-delete{{ $d->id }}">
+                                            <div class="modal fade" id="modal-delete{{ $d->buku_id }}">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
@@ -94,13 +93,12 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <p>Apakah yakin ingin menghapus data buku
-                                                                <b>{{ $d->name }}</b>
+                                                            <p>Apakah yakin ingin menghapus data buku dengan kode {{ $d->kode_buku }} dan judul "{{ $d->judul }}"? ini?</p>
                                                             </p>
                                                         </div>
                                                         <div class="modal-footer justify-content-between">
                                                             <form
-                                                                action="{{ route('buku.buku.delete', ['id' => $d->id]) }}"
+                                                                action="{{ route('buku.delete', ['id' => $d->buku_id]) }}"
                                                                 method="POST">
                                                                 @csrf
                                                                 @method('DELETE')
