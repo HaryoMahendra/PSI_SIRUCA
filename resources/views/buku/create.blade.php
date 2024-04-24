@@ -6,7 +6,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Buku</h1>
+                        <h1 class="m-0">Halaman Tambah Data Buku</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -22,10 +22,10 @@
             <div class="container-fluid">
                 <form action="{{ route('buku.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <div class="row">
+                    {{-- <div class="row">
                         <!-- left column -->
                         <div class="col-md-6">
-                            <!-- general form elements -->
+                            <!-- general form elements --> --}}
                             <div class="card card-primary">
                                 <div class="card-header">
                                     <h3 class="card-title">Form Tambah Data Buku</h3>
@@ -100,9 +100,9 @@
                                 </form>
                             </div>
                             <!-- /.card -->
-                        </div>
+                        {{-- </div> --}}
                         <!--/.col (left) -->
-                    </div>
+                    {{-- </div> --}}
                 </form>
 
                 <!-- /.row -->
