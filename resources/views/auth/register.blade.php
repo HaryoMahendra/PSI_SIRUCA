@@ -89,6 +89,20 @@
                             @enderror
                         </div>
 
+                        {{-- <div class="input-group mb-3">
+                            <input type="file" class="form-control" id="exampleInputEmail1" name="photo">
+                            @error('photo')
+                                <small>{{ $message }}</small>
+                            @enderror
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-image"></span>
+                                </div>
+                            </div>
+                        </div> --}}
+
+
+
                         <div class="row">
                             <!-- /.col -->
                             <div class="col-12">

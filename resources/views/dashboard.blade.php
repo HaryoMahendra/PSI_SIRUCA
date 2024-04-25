@@ -70,6 +70,8 @@
                     </div>
                     <!-- /.col -->
                 </div>
+                <!-- /.row -->
+
         </section>
         <!-- right col -->
     </div>
