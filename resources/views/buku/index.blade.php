@@ -70,9 +70,9 @@
                                                         alt=""width="50"></td>
                                                 <td>{{ $d->judul }}</td>
                                                 <td>{{ $d->kategori_buku }}</td>
+                                                <td>{{ $d->penulis }}</td>
                                                 <td>{{ $d->penerbit }}</td>
                                                 <td>{{ $d->tahun_terbit }}</td>
-                                                <td>{{ $d->penulis }}</td>
                                                 <td>
                                                     <a href="{{ route('buku.show', ['id' => $d->buku_id]) }}"
                                                         class="btn btn-primary"><i class="fas fa-eye"></i></a>
