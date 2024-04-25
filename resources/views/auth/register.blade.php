@@ -22,7 +22,7 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a href="{{ route('login') }}" class="h1"><b>SIRUCA</b>JTI</a>
+                <a href="{{ route('login') }}" class="h1"><b>SIRUCA</b></a>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Halaman Register</p>
@@ -101,15 +101,20 @@
                             </div>
                         </div> --}}
 
-
-
                         <div class="row">
                             <!-- /.col -->
-                            <div class="col-12">
+                            <div class="col-12 text-center">
                                 <button type="submit" class="btn btn-primary btn-block">Register</button>
+                                <br>
+                                <p class="mb-0">
+                                    Sudah memiliki akun? <a href="{{ route('login') }}">Masuk disini</a>
+                                </p>
                             </div>
                             <!-- /.col -->
                         </div>
+
+
+
                 </form>
             </div>
             <!-- /.card-body -->
