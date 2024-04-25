@@ -1,10 +1,23 @@
 @extends('layouts.main')
 @section('content')
     <div class="content-wrapper">
-        <div class="card card-outline card-primary">
-            <div class="card-header">
-                <div class="card-tools"></div>
-            </div>
+
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0"><b>Halaman Detail User</b></h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Detail User</li>
+                        </ol>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+
             <div class="card-body">
                 @empty($data)
                     <div class="alert alert-danger alert-dismissible">
@@ -36,7 +49,7 @@
                 <a href="{{ route('admin.index') }}" class="btn btn-sm btn-default mt-2">Kembali</a>
             </div>
         </div>
-    </div>
+    
 @endsection
 
 @push('css')

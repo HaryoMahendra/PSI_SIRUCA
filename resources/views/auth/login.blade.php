@@ -22,10 +22,10 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a href="{{ route('login') }}" class="h1"><b>SIRUCA</b><br>JTI</a>
+                <a href="{{ route('login') }}" class="h1"><b>SIRUCA</b></a>
             </div>
             <div class="card-body">
-                <p class="login-box-msg">Sign in to start your session</p>
+                <p class="login-box-msg">Halaman Login</p>
 
                 <form action="{{ route('login') }}" method="post">
                     @csrf
@@ -56,13 +56,14 @@
                     <div class="row">
                         <!-- /.col -->
                         <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                            <button type="submit" class="btn btn-primary btn-block">Login</button>
                         </div>
                         <!-- /.col -->
                     </div>
                 </form>
+                <br>
                 <p class="mb-0">
-                    <a href="{{ route('register') }}" class="text-center">Register a new membership</a>
+                    <a href="{{ route('register') }}" class="text-center">Register member baru</a>
                 </p>
             </div>
             <!-- /.card-body -->

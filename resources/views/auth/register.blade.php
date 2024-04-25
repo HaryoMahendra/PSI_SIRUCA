@@ -22,7 +22,7 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a href="{{ route('login') }}" class="h1"><b>Admin</b>LTE</a>
+                <a href="{{ route('login') }}" class="h1"><b>SIRUCA</b></a>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Halaman Register</p>
@@ -89,13 +89,32 @@
                             @enderror
                         </div>
 
+                        {{-- <div class="input-group mb-3">
+                            <input type="file" class="form-control" id="exampleInputEmail1" name="photo">
+                            @error('photo')
+                                <small>{{ $message }}</small>
+                            @enderror
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-image"></span>
+                                </div>
+                            </div>
+                        </div> --}}
+
                         <div class="row">
                             <!-- /.col -->
-                            <div class="col-12">
+                            <div class="col-12 text-center">
                                 <button type="submit" class="btn btn-primary btn-block">Register</button>
+                                <br>
+                                <p class="mb-0">
+                                    Sudah memiliki akun? <a href="{{ route('login') }}">Masuk disini</a>
+                                </p>
                             </div>
                             <!-- /.col -->
                         </div>
+
+
+
                 </form>
             </div>
             <!-- /.card-body -->

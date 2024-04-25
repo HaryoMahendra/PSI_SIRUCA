@@ -3,6 +3,7 @@
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\peminjamanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -61,5 +62,14 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::get('/edit/{id}', [BukuController::class, 'edit']) -> name('edit');
         Route::put('/update/{id}', [BukuController::class, 'update']) -> name('update');
         Route::delete('/delete/{id}', [BukuController::class, 'delete']) -> name('delete');
+    });
+    Route::group(['prefix' => 'peminjaman', 'as' => 'peminjaman.'], function () {
+        Route::get('/', [peminjamanController::class, 'index']) -> name('index');
+        Route::get('/create', [peminjamanController::class, 'create']) -> name('create');
+        Route::post('/store', [peminjamanController::class, 'store']) -> name('store');
+        Route::get('/{id}', [peminjamanController::class, 'show']) -> name('show');
+        Route::get('/edit/{id}', [peminjamanController::class, 'edit']) -> name('edit');
+        Route::put('/update/{id}', [peminjamanController::class, 'update']) -> name('update');
+        Route::delete('/delete/{id}', [peminjamanController::class, 'delete']) -> name('delete');
     });
 });
