@@ -48,17 +48,33 @@
                          </p>
                      </a>
                  </li>
+
+                 <li class="nav-header">Data Pengguna</li>
+
                  <li class="nav-item">
-                     <a href="{{ route('admin.index') }}" class="nav-link">
-                         <i class="nav-icon fas fa-user"></i>
+                     <a href="{{ route('level.index') }}"
+                         class="nav-link {{ $activeMenu == 'level' ? 'active' : '' }} ">
+                         <i class="nav-icon fas fa-layer-group"></i>
                          <p>
-                             Data Users
+                             Data Level
                          </p>
                      </a>
                  </li>
 
                  <li class="nav-item">
-                     <a href="{{ route('buku.index') }}" class="nav-link">
+                     <a href="{{ route('admin.index') }}"
+                         class="nav-link {{ $activeMenu == 'users' ? 'active' : '' }} ">
+                         <i class="nav-icon fas fa-user"></i>
+                         <p>
+                             Data User
+                         </p>
+                     </a>
+                 </li>
+
+                 <li class="nav-header">Katalog Buku</li>
+
+                 <li class="nav-item">
+                     <a href="{{ route('buku.index') }}" class="nav-link {{ $activeMenu == 'buku' ? 'active' : '' }}">
                          <i class="nav-icon fas fa-book"></i>
                          <p>
                              Data Buku
@@ -66,6 +82,26 @@
                      </a>
                  </li>
 
+                 <li class="nav-header">Data Transaksi</li>
+                 <li class="nav-item">
+                     <a href="{{ route('peminjaman.index') }}"
+                         class="nav-link {{ $activeMenu == 'peminjaman' ? 'active' : '' }}">
+                         <i class="nav-icon fas fa-handshake"></i>
+                         <p>
+                             Peminjaman
+                         </p>
+                     </a>
+                 </li>
+
+                 {{-- <li class="nav-item">
+                        <a href="{{ route('pengembalian.index') }}"
+                            class="nav-link {{ $activeMenu == 'pengembalian' ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-undo"></i>
+                            <p>
+                                Pengembalian
+                            </p>
+                        </a>
+                 </li> --}}
 
                  <li class="nav-item">
                      <form action="{{ route('logout') }}" method="post" class="nav-link">

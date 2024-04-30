@@ -13,6 +13,8 @@ class BukuController extends Controller
 
     public function index(Request $request)
     {
+        $activeMenu = 'buku'; // Menu yang Anda ingin tandai sebagai aktif
+        
         $data = new  Buku(); 
         if ($request->get('search')) {
             $data = $data->where('judul', 'LIKE', '%' . $request->get('search') . '%')
@@ -21,16 +23,23 @@ class BukuController extends Controller
         }
         
         $data = $data->get();
-        return view('buku.index', compact('data', 'request'));
+        // Menentukan menu aktif
+        $activeMenu = 'buku'; // Menu yang Anda ingin tandai sebagai aktif
+    
+        return view('buku.index', compact('data', 'request', 'activeMenu'));
     }
+    
 
     public function create()
     {
-        return view('buku.create');
+        $activeMenu = 'buku'; // Menu yang Anda ingin tandai sebagai aktif
+        return view('buku.create', compact('activeMenu'));
     }
 
     public function update(Request $request, $id)
     {
+        $activeMenu = 'buku';
+
         $validator = Validator::make($request->all(), [
             'kode_buku' => 'required',
             'sampul' => 'image|mimes:jpeg,png,jpg|max:10000',
@@ -67,12 +76,14 @@ class BukuController extends Controller
 
         $find->update($data);
 
-        return redirect()->route('buku.index');
+        return redirect()->route('buku.index')->with(compact('activeMenu'));
     
     }
 
     public function store(Request $request)
     {
+        $activeMenu = 'buku';
+
         $validator = Validator::make($request->all(), [
             'kode_buku' => 'required',
             'sampul' => 'required|image|mimes:jpeg,png,jpg|max:10000',
@@ -101,28 +112,34 @@ class BukuController extends Controller
 
         Buku::create($data);
 
-        return redirect()->route('buku.index');
+        return redirect()->route('buku.index')->with(compact('activeMenu'));
 
     }
 
     public function show(Request $request, $buku_id)
     {
+        $activeMenu = 'buku';
+
         $data = Buku::where(['buku_id' => $buku_id])->first();
-        return view('buku.show', compact('data'));
+        return view('buku.show', compact('data', 'activeMenu'));
     }
 
     public function edit(string $buku_id)
     {
+        $activeMenu = "buku";
+
         $data = Buku::where(['buku_id' => $buku_id])->first();
-        return view('buku.edit', compact('data'));
+        return view('buku.edit', compact('data', 'activeMenu'));
     }
 
     public function delete(string $buku_id)
     {
+        $activeMenu = "buku";
+
         $data = Buku::findOrFail($buku_id);
         if($data){
             $data->delete();
         }
-        return redirect()->route('buku.index');
+        return redirect()->route('buku.index')->with(compact('activeMenu'));
     }
 }

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('level_id')->index();
             $table->string('name');
             $table->string('username')->unique();
             $table->string('email')->unique();
@@ -20,6 +21,8 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('level_id')->references('level_id')->on('level');
         });
     }
 

@@ -42,7 +42,7 @@
                                     </form>
                                 </div>
                             </div>
-                            
+
                             <!-- /.card-header -->
                             <div class="card-body table-responsive p-0">
                                 <table class="table table-hover text-nowrap">
@@ -52,6 +52,7 @@
                                             <th>Photo</th>
                                             <th>Nama</th>
                                             <th>Username</th>
+                                            <th>level</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -63,6 +64,7 @@
                                                         alt=""width="50"></td>
                                                 <td>{{ $d->name }}</td>
                                                 <td>{{ $d->username }}</td>
+                                                <td>{{ $d->level->level_nama }}</td>
                                                 <td>
                                                     <a href="{{ route('admin.user.show', ['id' => $d->id]) }}"
                                                         class="btn btn-primary"><i class="fas fa-eye"></i></a>

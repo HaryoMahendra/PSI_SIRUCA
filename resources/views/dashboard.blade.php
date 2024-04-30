@@ -28,7 +28,7 @@
                         <div class="info-box">
                             <span class="info-box-icon bg-info elevation-1"><i class="fas fa-book"></i></span>
                             <div class="info-box-content">
-                                <a href="{{ route('buku.index') }}" class="info-box-text">Buku</a>
+                                <a href="{{ route('buku.index') }}" class="info-box-text">Katalog Buku</a>
                             </div>
                             <!-- /.info-box-content -->
                         </div>

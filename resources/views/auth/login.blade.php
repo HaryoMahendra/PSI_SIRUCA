@@ -25,7 +25,6 @@
                 <a href="{{ route('login') }}" class="h1"><b>SIRUCA</b></a>
             </div>
             <div class="card-body">
-                <p class="login-box-msg">Halaman Login</p>
 
                 <form action="{{ route('login') }}" method="post">
                     @csrf

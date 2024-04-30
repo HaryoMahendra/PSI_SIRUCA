@@ -73,6 +73,15 @@
                                         <small>{{ $message }}</small>
                                     @enderror
                                 </div>
+                                
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Level</label>
+                                    <input type="text" name="level" class="form-control" id="exampleInputEmail1"
+                                        value="{{ $data->level->level_nama }}" placeholder="Enter Level">
+                                    @error('level')
+                                        <small>{{ $message }}</small>
+                                    @enderror
+                                </div>  
 
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Password</label>

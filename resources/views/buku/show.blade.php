@@ -52,13 +52,13 @@
                     </tr>
 
                     <tr>
-                        <th>Tahun Terbit</th>
-                        <td>{{ $data->tahun_terbit }}</td>
+                        <th>Penulis</th>
+                        <td>{{ $data->penulis }}</td>
                     </tr>
 
                     <tr>
-                        <th>Penulis</th>
-                        <td>{{ $data->penulis }}</td>
+                        <th>Tahun Terbit</th>
+                        <td>{{ $data->tahun_terbit }}</td>
                     </tr>
 
                 </table>

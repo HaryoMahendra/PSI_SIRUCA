@@ -36,10 +36,22 @@
                             <th>Nama Lengkap</th>
                             <td>: {{ $data->name }}</td>
                         </tr>
+
+                        <tr>
+                            <th>Email</th>
+                            <td>: {{ $data->email }}</td>   
+                        </tr> 
+
+                        <tr>    
+                            <th>Level</th>
+                            <td>: {{ $data->level->level_nama }}</td>     
+                        </tr>           
+
                         <tr>
                             <th>Username</th>
                             <td>: {{ $data->username }}</td>
                         </tr>
+                        
                         <tr>
                             <th>Password</th>
                             <td>********</td>

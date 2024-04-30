@@ -40,28 +40,46 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Nama</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" name="nama" placeholder="Masukkan Nama">
+                                <input type="text" class="form-control" id="exampleInputEmail1" name="nama"
+                                    placeholder="Masukkan Nama">
                                 @error('nama')
                                     <small>{{ $message }}</small>
                                 @enderror
                             </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Level</label>
+                                @error('level')
+                                    <small>{{ $message }}</small>
+                                @enderror
+                                <select class="custom-select" name="level">
+                                    <option selected>Pilih Level</option>
+                                    <option value="1">Admin</option>
+                                    <option value="2">Dosen</option>
+                                    <option value="3">Mahasiswa</option>
+                                </select>
+                            </div>
+
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Username</label>
-                                <input type="username" name="username" class="form-control" id="exampleInputusername1"placeholder="Masukkan Email">
+                                <input type="username" name="username" class="form-control"
+                                    id="exampleInputusername1"placeholder="Masukkan Email">
                                 @error('username')
                                     <small>{{ $message }}</small>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Email</label>
-                                <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Email">
+                                <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                                    placeholder="Masukkan Email">
                                 @error('email')
                                     <small>{{ $message }}</small>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Password</label>
-                                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Password">
+                                <input type="password" name="password" class="form-control" id="exampleInputPassword1"
+                                    placeholder="Masukkan Password">
                                 @error('password')
                                     <small>{{ $message }}</small>
                                 @enderror

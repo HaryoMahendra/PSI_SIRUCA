@@ -25,9 +25,19 @@
                 <a href="{{ route('login') }}" class="h1"><b>SIRUCA</b></a>
             </div>
             <div class="card-body">
-                <p class="login-box-msg">Halaman Register</p>
                 <form action="{{ route('register-proses') }}" method="post">
                     @csrf
+
+                    <div class="input-group mb-3">
+                        <input type="text" name="level_id" class="form-control" placeholder="Level"
+                            value="{{ old('level') }}">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="input-group mb-3">
                         <input type="text" name="name" class="form-control" placeholder="Nama Lengkap"
                             value="{{ old('name') }}">
@@ -75,6 +85,10 @@
                                     </div>
                                 </div>
                             </div>
+                            @error('password')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+
                             <div class="input-group mb-3">
                                 <input type="password" name="password-confirmation" class="form-control"
                                     placeholder="Confirm Password">
@@ -89,22 +103,10 @@
                             @enderror
                         </div>
 
-                        {{-- <div class="input-group mb-3">
-                            <input type="file" class="form-control" id="exampleInputEmail1" name="photo">
-                            @error('photo')
-                                <small>{{ $message }}</small>
-                            @enderror
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <span class="fas fa-image"></span>
-                                </div>
-                            </div>
-                        </div> --}}
-
                         <div class="row">
                             <!-- /.col -->
                             <div class="col-12 text-center">
-                                <button type="submit" class="btn btn-primary btn-block">Register</button>
+                                <button type="submit" class="btn btn-primary btn-block mx-auto">Register</button>
                                 <br>
                                 <p class="mb-0">
                                     Sudah memiliki akun? <a href="{{ route('login') }}">Masuk disini</a>
@@ -112,8 +114,6 @@
                             </div>
                             <!-- /.col -->
                         </div>
-
-
 
                 </form>
             </div>

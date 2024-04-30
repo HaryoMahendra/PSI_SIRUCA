@@ -5,18 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Pegawai extends Model
+class Level extends Model
 {
     use HasFactory;
+    protected $table = 'level';
     
-    protected $table = 'pegawai';
-
+    protected $primaryKey = 'level_id';
     protected $fillable = [
-        'pegawai_id',
-        'nama',
-        'NIP',
-        'no_telp',
-        'jenis_kelamin',
-        'image',
+        'level_kode',
+        'level_nama'
     ];
 }

@@ -48,12 +48,14 @@ class LoginController extends Controller
     public function register_proses(Request $request)
     {
         $request->validate([
+            'level_id' => ['required'],
             'name' => ['required'],
             'username'=>['required','unique:users,username'],
             'email' => ['required', 'email', 'unique:users,email'],
             'password' => 'required|min:6',
         ]);
 
+        $data['level_id']   = $request->level_id;
         $data['name']       = $request->name;
         $data['username']   = $request->username;
         $data['email']      = $request->email;

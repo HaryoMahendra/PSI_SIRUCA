@@ -17,22 +17,26 @@ class UserSeeder extends Seeder
     {
         User::create(
             [
+            'level_id' => 1,
             'name' => 'Admin',
-            'username' => 'admin',
-            'email' => 'admin@example.com',
+            'email' => 'admin@gmail.com',
+            'username' => 'Admin',
             'password' => Hash::make('12345'),
-        ],
-        [
+            ],
+            [
+            'level_id' => 2,
             'name' => 'Dosen',
-            'username' => 'dosen',
-            'email' => 'dosen@example.com',
+            'email' => 'dosen@gmail.com',
+            'username' => 'Dosen',
             'password' => Hash::make('12345'),
-        ],
-        [
+            ],
+            [
+            'level_id' => 3,
             'name' => 'Mahasiswa',
-            'username' => '2141760000',
-            'email' => 'mahasiswa@example.com',
-            'password' => Hash::make('11111'),
-        ]);
+            'email' => 'mahasiswa@gmail.com',
+            'username' => 'Mahasiswa',
+            'password' => Hash::make('12345'),
+            ]
+            );
     }
 }
