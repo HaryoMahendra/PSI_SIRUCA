@@ -65,6 +65,16 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::put('/update/{id}', [BukuController::class, 'update']) -> name('update');
         Route::delete('/delete/{id}', [BukuController::class, 'delete']) -> name('delete');
     });
+    Route::group(['prefix' => 'level', 'as' => 'level.'], function () {
+        Route::get('/', [LevelController::class, 'index']) -> name('index');
+        Route::get('/create', [LevelController::class, 'create'])->name('create');
+        Route::post('/store', [LevelController::class, 'store']) -> name('store');
+        Route::get('/{id}', [LevelController::class, 'show']) -> name('show');
+        Route::get('/edit/{id}', [LevelController::class, 'edit']) -> name('edit');
+        Route::put('/update/{id}', [LevelController::class, 'update']) -> name('update');
+        Route::delete('/delete/{id}', [LevelController::class, 'delete']) -> name('delete');
+        
+    });
     Route::group(['prefix' => 'peminjaman', 'as' => 'peminjaman.'], function () {
         Route::get('/', [peminjamanController::class, 'index']) -> name('index');
         Route::get('/create', [peminjamanController::class, 'create']) -> name('create');
@@ -73,9 +83,5 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::get('/edit/{id}', [peminjamanController::class, 'edit']) -> name('edit');
         Route::put('/update/{id}', [peminjamanController::class, 'update']) -> name('update');
         Route::delete('/delete/{id}', [peminjamanController::class, 'delete']) -> name('delete');
-    });
-    Route::group(['prefix' => 'level', 'as' => 'level.'], function () {
-        Route::get('/', [LevelController::class, 'index']) -> name('index');
-        
     });
 });

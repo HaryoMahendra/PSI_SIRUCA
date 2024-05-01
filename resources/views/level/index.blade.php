@@ -1,4 +1,5 @@
 @extends('layouts.main')
+
 @section('content')
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -6,12 +7,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0"><b>Halaman Data Buku</b></h1>
+                        <h1 class="m-0"><b>Halaman Data Level</b></h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Data Buku</li>
+                            <li class="breadcrumb-item active">Data Level</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -24,13 +25,13 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                        <a href="{{ route('buku.create') }}" class="btn btn-primary mb-3">Add Data </a>
+                        <a href="{{ route('level.create') }}" class="btn btn-primary mb-3">Add Data </a>
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Data Buku</h3>
+                                <h3 class="card-title">Data Level</h3>
 
                                 <div class="card-tools">
-                                    <form action="{{ route('buku.index') }}" method="GET">
+                                    <form action="{{ route('level.index') }}" method="GET">
                                         <div class="input-group input-group-sm" style="width: 150px;">
                                             <input type="text" name="search" class="form-control float-right"
                                                 placeholder="Search" value="{{ $request->get('search') }}">
@@ -50,13 +51,8 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Kode Buku</th>
-                                            <th>Sampul Buku</th>
-                                            <th>Judul Buku</th>
-                                            <th>Kategori Buku</th>
-                                            <th>Penulis</th>
-                                            <th>Penerbit</th>
-                                            <th>Tahun Terbit</th>
+                                            <th>Kode Level</th>
+                                            <th>Nama Level</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -64,25 +60,18 @@
                                         @foreach ($data as $d)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $d->kode_buku }}</td>
-                                                {{-- <td>{{ $loop->iteration }}</td> --}}
-                                                <td><img src="{{ asset('storage/sampul-buku/' . $d->sampul) }}"
-                                                        alt=""width="50"></td>
-                                                <td>{{ $d->judul }}</td>
-                                                <td>{{ $d->kategori_buku }}</td>
-                                                <td>{{ $d->penulis }}</td>
-                                                <td>{{ $d->penerbit }}</td>
-                                                <td>{{ $d->tahun_terbit }}</td>
+                                                <td>{{ $d->level_kode }}</td>
+                                                <td>{{ $d->level_nama }}</td>
                                                 <td>
-                                                    <a href="{{ route('buku.show', ['id' => $d->buku_id]) }}"
+                                                    <a href="{{ route('level.show', ['id' => $d->level_id]) }}"
                                                         class="btn btn-primary"><i class="fas fa-eye"></i></a>
-                                                    <a href="{{ route('buku.edit', ['id' => $d->buku_id]) }}"
+                                                    <a href="{{ route('level.edit', ['id' => $d->level_id]) }}"
                                                         class="btn btn-warning"><i class="fas fa-pen"></i></a>
-                                                    <a data-toggle="modal" data-target="#modal-delete{{ $d->buku_id }}"
+                                                    <a data-toggle="modal" data-target="#modal-delete{{ $d->level_id }}"
                                                         class="btn btn-danger"><i class="fas fa-trash"></i></a>
                                                 </td>
                                             </tr>
-                                            <div class="modal fade" id="modal-delete{{ $d->buku_id }}">
+                                            <div class="modal fade" id="modal-delete{{ $d->level_id }}">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
@@ -92,17 +81,14 @@
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
                                                         </div>
-
                                                         <div class="modal-body">
-                                                            <p>Apakah yakin ingin menghapus data buku
-                                                                <b>{{ $d->kode_buku }} </b>dengan judul<b>
-                                                                    {{ $d->judul }}</b> ini?
-                                                            </p>
+                                                            <p>Apakah yakin ingin menghapus data level
+                                                                <b>{{ $d->level_kode }} </b>dengan nama<b> {{ $d->level_nama }}</b> ?</p>
                                                         </div>
 
                                                         <div class="modal-footer justify-content-between">
                                                             <form
-                                                                action="{{ route('buku.delete', ['id' => $d->buku_id]) }}"
+                                                                action="{{ route('level.delete', ['id' => $d->level_id]) }}"
                                                                 method="POST">
                                                                 @csrf
                                                                 @method('DELETE')

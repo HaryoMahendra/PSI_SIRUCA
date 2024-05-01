@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ config('app.name', 'PWL Laravel Started Code') }}</title>
+    <title>{{ config('app.name', 'PSI SIRUCA') }}</title>
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- untuk mengirim token larafel CSRF pada setiap request ajax -->

@@ -41,7 +41,8 @@
                  data-accordion="false">
 
                  <li class="nav-item">
-                     <a href="{{ route('admin.dashboard') }}" class="nav-link">
+                     <a href="{{ route('admin.dashboard') }}"
+                         class="nav-link {{ $activeMenu == 'dashboard' ? 'dashboard' : '' }}">
                          <i class="nav-icon fas fa-tachometer-alt"></i>
                          <p>
                              Dashboard
