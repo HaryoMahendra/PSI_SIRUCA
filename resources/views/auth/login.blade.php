@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{{ asset('template/dist/css/adminlte.min.css') }}">
 </head>
 
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="background-image: url('{{ asset('ruangbaca.jpeg') }}'); background-size: cover; background-position: center;">
     <div class="login-box">
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">

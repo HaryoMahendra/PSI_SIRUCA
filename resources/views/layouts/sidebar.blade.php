@@ -83,6 +83,16 @@
                      </a>
                  </li>
 
+                 {{-- <li class="nav-item">
+                     <a href="{{ route('buku.index') }}"
+                         class="nav-link {{ $activeMenu == 'kategori' ? 'active' : '' }}">
+                         <i class="nav-icon fas fa-list"></i>
+                         <p>
+                             Kategori Buku
+                         </p>
+                     </a>
+                </li> --}}
+
                  <li class="nav-header">Data Transaksi</li>
                  <li class="nav-item">
                      <a href="{{ route('peminjaman.index') }}"
@@ -93,16 +103,17 @@
                          </p>
                      </a>
                  </li>
-
-                 {{-- <li class="nav-item">
-                        <a href="{{ route('pengembalian.index') }}"
-                            class="nav-link {{ $activeMenu == 'pengembalian' ? 'active' : '' }}">
+                 <li class="nav-item">
+                    <a href="{{ route('peminjaman.index') }}"
+                         class="nav-link {{ $activeMenu == 'pengembalian' ? 'active' : '' }}">
                             <i class="nav-icon fas fa-undo"></i>
-                            <p>
-                                Pengembalian
-                            </p>
-                        </a>
-                 </li> --}}
+                         <p>
+                             Pengembalian
+                         </p>
+                     </a>
+                 </li>
+
+                 <li class="nav-header"></li>
 
                  <li class="nav-item">
                      <form action="{{ route('logout') }}" method="post" class="nav-link">
